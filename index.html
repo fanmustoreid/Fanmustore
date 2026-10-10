@@ -4,275 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fanmustore</title>
-
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-
-body{
-  font-family:Arial,sans-serif;
-  background:#faf7ff;
-  color:#333
-}
-
-header{
-  background:linear-gradient(135deg,#9c27b0,#d41470);
-  color:#fff;
-  text-align:center;
-  padding:55px 20px
-}
-
-header h1{
-  font-size:42px;
-  margin-bottom:25px
-}
-
-header p{
-  font-size:24px
-}
-
-main{
-  max-width:900px;
-  margin:auto;
-  padding:35px 18px 60px
-}
-
-.store-title{
-  text-align:center;
-  margin-bottom:25px
-}
-
-.store-title h2{
-  color:#8e24aa;
-  font-size:34px;
-  margin-bottom:10px
-}
-
-.store-title p{
-  font-size:20px;
-  line-height:1.6
-}
-
-.cart-bar{
-  position:sticky;
-  top:10px;
-  z-index:10;
-  display:flex;
-  justify-content:flex-end;
-  margin-bottom:22px
-}
-
-.cart-button{
-  border:0;
-  background:#8e24aa;
-  color:#fff;
-  border-radius:50%;
-  width:55px;
-  height:55px;
-  font-size:22px;
-  font-weight:bold;
-  cursor:pointer;
-  box-shadow:0 5px 15px rgba(0,0,0,.15);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:3px
-}
-
-.products{
-  display:grid;
-  gap:25px
-}
-
-.card{
-  background:#fff;
-  border-radius:28px;
-  overflow:hidden;
-  box-shadow:0 5px 20px rgba(80,30,100,.1)
-}
-
-.card img{
-  display:block;
-  width:100%;
-  height:260px;
-  object-fit:cover;
-  background:#f1edf5
-}
-
-.card-content{
-  padding:22px 28px 28px
-}
-
-.card h3{
-  font-size:23px;
-  margin-bottom:12px
-}
-
-.price{
-  color:#b21f62;
-  font-size:29px;
-  font-weight:bold;
-  margin-bottom:12px
-}
-
-.stock{
-  font-size:18px;
-  font-weight:bold;
-  margin-bottom:18px
-}
-
-.available{
-  color:#388e3c
-}
-
-.sold{
-  color:#777
-}
-
-.order-btn{
-  display:block;
-  width:100%;
-  border:0;
-  border-radius:22px;
-  background:#9225ad;
-  color:#fff;
-  text-align:center;
-  padding:17px;
-  font-size:21px;
-  font-weight:bold;
-  cursor:pointer
-}
-
-.order-btn:disabled{
-  background:#ccc;
-  cursor:not-allowed
-}
-
-.cart-panel{
-  display:none;
-  background:#fff;
-  border-radius:25px;
-  padding:25px;
-  margin-bottom:25px;
-  box-shadow:0 5px 20px rgba(80,30,100,.15)
-}
-
-.cart-panel.show{
-  display:block
-}
-
-.cart-panel h2{
-  color:#8e24aa;
-  margin-bottom:18px
-}
-
-.cart-empty{
-  color:#777;
-  padding:10px 0
-}
-
-.cart-item{
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  align-items:center;
-  padding:15px 0;
-  border-bottom:1px solid #eee
-}
-
-.cart-item-name{
-  font-weight:bold;
-  flex:1
-}
-
-.cart-item-controls{
-  display:flex;
-  align-items:center;
-  gap:8px
-}
-
-.qty-btn{
-  border:0;
-  width:32px;
-  height:32px;
-  border-radius:50%;
-  background:#eee;
-  font-size:18px;
-  cursor:pointer
-}
-
-.remove-btn{
-  border:0;
-  background:none;
-  color:#d32f2f;
-  cursor:pointer;
-  font-size:13px
-}
-
-.cart-total{
-  text-align:right;
-  font-size:23px;
-  font-weight:bold;
-  margin:22px 0;
-  color:#b21f62
-}
-
-.checkout-btn{
-  width:100%;
-  border:0;
-  border-radius:22px;
-  background:#25d366;
-  color:#fff;
-  padding:16px;
-  font-size:20px;
-  font-weight:bold;
-  cursor:pointer
-}
-
-.clear-btn{
-  width:100%;
-  margin-top:10px;
-  border:0;
-  background:transparent;
-  color:#777;
-  padding:10px;
-  cursor:pointer
-}
-
-footer{
-  text-align:center;
-  padding:30px;
-  color:#777;
-  font-size:18px
-}
-
-@media(max-width:600px){
-  header{
-    padding:45px 15px
-  }
-
-  header h1{
-    font-size:35px
-  }
-
-  header p{
-    font-size:19px
-  }
-
-  main{
-    padding:28px 16px 50px
-  }
-
-  .card img{
-    height:230px
-  }
-
-  .card-content{
-    padding:20px
-  }
-
-  .card h3{
-    font-size:21px
-  }
-}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:Arial,sans-serif;background:#faf7ff;color:#333}header{background:linear-gradient(135deg,#9c27b0,#d41470);color:#fff;text-align:center;padding:55px 20px}header h1{font-size:42px;margin-bottom:25px}header p{font-size:24px}main{max-width:900px;margin:auto;padding:35px 18px 60px}.store-title{text-align:center;margin-bottom:25px}.store-title h2{color:#8e24aa;font-size:34px;margin-bottom:10px}.store-title p{font-size:20px;line-height:1.6}.cart-bar{position:sticky;top:10px;z-index:10;display:flex;justify-content:flex-end;margin-bottom:22px}.cart-button{border:0;background:#8e24aa;color:#fff;border-radius:50%;width:55px;height:55px;font-size:22px;font-weight:bold;cursor:pointer;box-shadow:0 5px 15px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;gap:3px}.products{display:grid;gap:25px}.card{background:#fff;border-radius:28px;overflow:hidden;box-shadow:0 5px 20px rgba(80,30,100,.1)}.card img{display:block;width:100%;height:260px;object-fit:cover;background:#f1edf5}.card-content{padding:22px 28px 28px}.card h3{font-size:23px;margin-bottom:12px}.price{color:#b21f62;font-size:29px;font-weight:bold;margin-bottom:12px}.stock{font-size:18px;font-weight:bold;margin-bottom:18px}.available{color:#388e3c}.sold{color:#777}.order-btn{display:block;width:100%;border:0;border-radius:22px;background:#9225ad;color:#fff;text-align:center;padding:17px;font-size:21px;font-weight:bold;cursor:pointer}.order-btn:disabled{background:#ccc;cursor:not-allowed}.cart-panel{display:none;background:#fff;border-radius:25px;padding:25px;margin-bottom:25px;box-shadow:0 5px 20px rgba(80,30,100,.15)}.cart-panel.show{display:block}.cart-panel h2{color:#8e24aa;margin-bottom:18px}.cart-empty{color:#777;padding:10px 0}.cart-item{display:flex;justify-content:space-between;gap:15px;align-items:center;padding:15px 0;border-bottom:1px solid #eee}.cart-item-name{font-weight:bold;flex:1}.cart-item-controls{display:flex;align-items:center;gap:8px}.qty-btn{border:0;width:32px;height:32px;border-radius:50%;background:#eee;font-size:18px;cursor:pointer}.remove-btn{border:0;background:none;color:#d32f2f;cursor:pointer;font-size:13px}.cart-total{text-align:right;font-size:23px;font-weight:bold;margin:22px 0;color:#b21f62}.checkout-btn{width:100%;border:0;border-radius:22px;background:#25d366;color:#fff;padding:16px;font-size:20px;font-weight:bold;cursor:pointer}.clear-btn{width:100%;margin-top:10px;border:0;background:transparent;color:#777;padding:10px;cursor:pointer}footer{text-align:center;padding:30px;color:#777;font-size:18px}@media(max-width:600px){header{padding:45px 15px}header h1{font-size:35px}header p{font-size:19px}main{padding:28px 16px 50px}.card img{height:230px}.card-content{padding:20px}.card h3{font-size:21px}}
 </style>
-</head
+</head>
+<body>
+<header><h1>✨ FANMU STORE ✨</h1><p>Photocard • Polaroid • K-Pop Goods</p></header>
+<main>
+<div class="store-title"><h2>🛍️ Fanmustore</h2><p>Welcome to Fanmustore<br>All goods are ready<br>Happy Shopping! 💜</p></div>
+<div class="cart-bar"><button class="cart-button" onclick="toggleCart()" aria-label="Shopping Cart">🛒 <span id="cart-count">0</span></button></div>
+<div id="cart-panel" class="cart-panel"><h2>🛒 Shopping Cart</h2><div id="cart-items"></div><div id="cart-total" class="cart-total">Total: $0 USD</div><button class="checkout-btn" onclick="checkoutWhatsApp()">💬 Checkout via WhatsApp</button><button class="clear-btn" onclick="clearCart()">Clear Cart</button></div>
+<section class="products">
+<div class="card"><img src="images/mj-switch-on.jpg" alt="MJ Switch On Polaroid"><div class="card-content"><h3>MJ Switch On Polaroid</h3><div class="price">$1 USD</div><div class="stock available" id="stock-mj">📦 Stock: 1</div><button class="order-btn" id="btn-mj" onclick="addToCart('MJ Switch On Polaroid',1,'mj')">Add to Cart</button></div></div>
+<div class="card"><img src="images/jinjin-a.jpg" alt="Jinjin Switch On Polaroid A"><div class="card-content"><h3>Jinjin Switch On Polaroid (A. ver)</h3><div class="price">$1 USD</div><div class="stock available" id="stock-jinjin-a">📦 Stock: 3</div><button class="order-btn" id="btn-jinjin-a" onclick="addToCart('Jinjin Switch On Polaroid (A. ver)',1,'jinjin-a')">Add to Cart</button></div></div>
+<div class="card"><img src="images/jinjin-b.jpg" alt="Jinjin Switch On Polaroid B"><div class="card-content"><h3>Jinjin Switch On Polaroid (B. ver)</h3><div class="price">$1 USD</div><div class="stock available" id="stock-jinjin-b">📦 Stock: 1</div><button class="order-btn" id="btn-jinjin-b" onclick="addToCart('Jinjin Switch On Polaroid (B. ver)',1,'jinjin-b')">Add to Cart</button></div></div>
+<div class="card"><img src="images/rocky.jpg" alt="Rocky Switch On Polaroid"><div class="card-content"><h3>Rocky Switch On Polaroid</h3><div class="price">$1 USD</div><div class="stock available" id="stock-rocky">📦 Stock: 1</div><button class="order-btn" id="btn-rocky" onclick="addToCart('Rocky Switch On Polaroid',1,'rocky')">Add to Cart</button></div></div>
+<div class="card"><img src="images/moonbin.jpg" alt="Moonbin Switch On Polaroid"><div class="card-content"><h3>Moonbin Switch On Polaroid</h3><div class="price">$1 USD</div><div class="stock available" id="stock-moonbin">📦 Stock: 1</div><button class="order-btn" id="btn-moonbin" onclick="addToCart('Moonbin Switch On Polaroid',1,'moonbin')">Add to Cart</button></div></div>
+</section></main>
+<footer>© 2026 Fanmustore 💜</footer>
+<script>
+const PRODUCTS={mj:{name:'MJ Switch On Polaroid',price:1,stock:1},'jinjin-a':{name:'Jinjin Switch On Polaroid (A. ver)',price:1,stock:3},'jinjin-b':{name:'Jinjin Switch On Polaroid (B. ver)',price:1,stock:1},rocky:{name:'Rocky Switch On Polaroid',price:1,stock:1},moonbin:{name:'Moonbin Switch On Polaroid',price:1,stock:1}};
+let cart=JSON.parse(localStorage.getItem('fanmustoreCart')||'{}');
+function saveCart(){localStorage.setItem('fanmustoreCart',JSON.stringify(cart))}
+function getCartQuantity(id){return cart[id]||0}
+function addToCart(name,price,id){const p=PRODUCTS[id],q=getCartQuantity(id);if(q>=p.stock){alert('Stock '+p.name+' cuma '+p.stock+' yaa 💜');return}cart[id]=q+1;saveCart();updateCart();document.getElementById('cart-panel').classList.add('show')}
+function changeQty(id,amount){const p=PRODUCTS[id],q=getCartQuantity(id)+amount;if(q<=0)delete cart[id];else if(q<=p.stock)cart[id]=q;else alert('Stock '+p.name+' cuma '+p.stock+' yaa 💜');saveCart();updateCart()}
+function removeItem(id){delete cart[id];saveCart();updateCart()}
+function clearCart(){cart={};saveCart();updateCart()}
+function updateCart(){const c=document.getElementById('cart-items'),count=document.getElementById('cart-count'),totalEl=document.getElementById('cart-total');let totalItems=0,total=0,html='';for(const id in cart){const p=PRODUCTS[id],q=cart[id];if(!p)continue;totalItems+=q;total+=p.price*q;html+=`<div class="cart-item"><div class="cart-item-name">${p.name}<br><small>$${p.price} × ${q}</small></div><div class="cart-item-controls"><button class="qty-btn" onclick="changeQty('${id}',-1)">−</button><strong>${q}</strong><button class="qty-btn" onclick="changeQty('${id}',1)">+</button><button class="remove-btn" onclick="removeItem('${id}')">Remove</button></div></div>`}c.innerHTML=totalItems?html:'<div class="cart-empty">Cart is empty 💜</div>';count.textContent=totalItems;totalEl.textContent='Total: $'+total+' USD';updateStockDisplay()}
+function updateStockDisplay(){for(const id in PRODUCTS){const p=PRODUCTS[id],remaining=p.stock-getCartQuantity(id),s=document.getElementById('stock-'+id),b=document.getElementById('btn-'+id);if(remaining<=0){s.textContent='📦 Stock: 0';s.className='stock sold';b.textContent='SOLD OUT';b.disabled=true}else{s.textContent='📦 Stock: '+remaining;s.className='stock available';b.textContent='Add to Cart';b.disabled=false}}}
+function toggleCart(){document.getElementById('cart-panel').classList.toggle('show')}
+function checkoutWhatsApp(){const items=[];let total=0;for(const id in cart){const p=PRODUCTS[id],q=cart[id];if(!p)continue;items.push('• '+p.name+' × '+q+' = $'+(p.price*q));total+=p.price*q}if(!items.length){alert('Cart is empty 💜');return}const message=`Hi Fanmustore! 💜\n\nI want to order:\n\n${items.join('\n')}\n\nTotal: $${total} USD\n\nPlease confirm the availability\nThank you! ✨`;window.location.href='https://wa.me/6285156304203?text='+encodeURIComponent(message)}
+updateCart();
+</script>
+</body>
+</html>
